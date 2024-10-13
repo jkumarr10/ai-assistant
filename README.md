@@ -40,7 +40,7 @@ To confirm that poetry is using a virtual environment, you can run:
 
 ### 5. Set Up Environment Variables
 
-Create a .env file in the project root directory and add your environment variables. This file should store API keys and other sensitive information that shouldn't be committed to the repository. To run this project you will need a OPENAI API KEY & TAVILY API KEY
+Create a .env file in the project root directory and add your environment variables. This file should store API keys and other sensitive information that shouldn't be committed to the repository. To run this project you will need a OPENAI API KEY & TAVILY API KEY.
 
 ### 6. Running the Streamlit Application
 
