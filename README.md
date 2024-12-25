@@ -1,10 +1,10 @@
 # AI Assistant with RAG Pipeline & Web Search
 
-This project is an AI assistant application built using LangChain and Streamlit. The assistant uses a Retrieval-Augmented Generation (RAG) pipeline to retrieve relevant information from a pre-loaded document (PDF file) and can also fetch real-time information using a web search tool. The interface is built using Streamlit to provide a user-friendly way to interact with the assistant.
+This project is a tutorial showing how to build an AI assistant application built using LangChain, Langgraph and Streamlit. The assistant uses a Retrieval-Augmented Generation (RAG) pipeline to retrieve relevant information from a pre-loaded document (PDF file) and can also fetch real-time information using a web search tool. The interface is built using Streamlit to provide a user-friendly way to interact with the assistant.
 
 ## Features:
 
-• RAG Pipeline: Retrieves context from a preloaded document and answers queries on the topic of "Sound" and uses GPT to generate answers.
+• RAG Pipeline: Retrieves context from a preloaded document which is based on a marketing textbook and answers queries on the topic of "Consumer Markets and Purchasing Behaviour" and uses GPT to generate answers.
 
 • Web Search Tool: Fetches real-time information from the web when necessary.
 
@@ -57,7 +57,7 @@ This will launch the Streamlit server, and you can access the app in your web br
 
 • ai_assistant.ipynb: A Jupyter Notebook that replicates the workflow of app.py but runs FastAPI directly within the notebook using nest_asyncio to allow concurrent event loops. It allows testing FastAPI endpoints directly in the notebook. (Contains steps for Assignment 1: setting up a RAG pipeline and steps for Assignment 2: setting up an AI Assitant with tools.)
 
-• iesc111.pdf: A sample PDF document that is loaded into the RAG pipeline. This document contains information on the topic of "Sound".
+• principle_of_marketing.pdf: A sample PDF document that is loaded into the RAG pipeline. This document contains information on the topic of "Consumer Markets and Purchasing Behaviour".
 
 • .gitignore: Specifies files and directories that should be ignored by Git (e.g., virtual environments, compiled files).
 
@@ -70,23 +70,17 @@ This will launch the Streamlit server, and you can access the app in your web br
 
 Once the Streamlit app is running, follow these steps:
 
-1. Enter a question: Type a question into the input box. You can ask questions related to the preloaded "Sound" document or other general questions.
+1. Enter a question: Type a question into the input box. You can ask questions related to the preloaded "principles_of_marketing" document or other general questions. Click on the "Ask AI" button to process your question and get an answer.
 
 2. Get a response: The AI assistant will either use the RAG pipeline to retrieve context from the document or fetch real-time web information. The result is displayed interactively in the Streamlit interface.
 
 Example Queries:
 
-    "What is sound?"
-    "How do sound waves propagate?"
-    "Explain the characteristics of sound."
+    "What is Consumer buying behavior as per this chapter?"
+    "What are the 4Ps of marketing as mentioned in the chapter?"
+    "Explain the various types of Consumer buying behavior."
+    "What are the factors that influence consumer buying behaviour?"
 
 ### .gitignore
 
 Make sure you add a .gitignore file to prevent sensitive files or unnecessary directories from being tracked in Git.
-
-## Contact
-
-If you have any questions or need further assistance, please feel free to reach out:
-
-    Email: jitthenkumarr29@gmail.com
-    GitHub: https://github.com/jkumarr10

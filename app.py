@@ -1,3 +1,4 @@
+# import libraries
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_openai import ChatOpenAI
 from langchain_chroma import Chroma
@@ -30,7 +31,7 @@ load_dotenv()
 llm = ChatOpenAI(model='gpt-4o-mini', temperature=0)
 
 # Load the PDF and split text
-loader = PyPDFLoader("iesc111.pdf")
+loader = PyPDFLoader("principles_of_marketing.pdf")
 pages = loader.load_and_split()
 
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=200, chunk_overlap=40)
@@ -90,23 +91,25 @@ llm_with_tools = llm.bind_tools(tools)
 
 # Create a System Message
 
-sys_msg = SystemMessage(content=
-    """You are an AI assistant capable of answering questions using two tools provided to you:
+sys_msg = SystemMessage(content= """
+    You are an AI assistant capable of answering questions using two tools provided to you:
     
         1. **Retrieval-Augmented Generation (RAG) Pipeline Tool**:
-        - You have access to a pre-configured RAG pipeline, which is capable of retrieving relevant information about a document containing information on the topic of 'Sound'.
-        - If the user's input is related to the topic of 'Sound', trigger the RAG tool.
+        - You have access to a pre-configured RAG pipeline, which is capable of retrieving relevant information about a document containing a chapter from a marketing textbook about Consumer Markets and Purchasing Behavior.
+        - If the user's input is related to the topic of marketing, trigger the RAG tool.
 
         2. **Tavily Web Search Tool**:
-        - You can use the Tavily web search tool to fetch real-time information from the web for any queries not covered by the RAG pipeline, such as current events, general knowledge, or even topics unrelated to 'Sound'.
+        - You can use the Tavily web search tool to fetch real-time information from the web for any queries not covered by the RAG pipeline, such as current events, general knowledge, or even topics unrelated to marketing.
 
     Deciding when to invoke a tool:
-    - Use the **RAG Pipeline Tool** if the user's input is related to 'Sound'.
-    - Use the **Tavily Web Search Tool** if the user's query is about 'Sound' that the document in RAG pipeline does not cover or requires real-time or broader web-based information.
+    - Use the **RAG Pipeline Tool** if the user's input is related to marketing.
+    - Use the **Tavily Web Search Tool** if the user's query is about marketing that the document in RAG pipeline does not cover or requires real-time or broader web-based information.
     
     Do not hallucinate your answer. Use the tools provided to provide the best answer possible to the user's query.
 
-    User Question: "{user_query}"""
+    User Question: "{user_query}"
+    
+    """
 )
 
 # Create Assistant Node
